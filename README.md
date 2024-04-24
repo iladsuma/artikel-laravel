@@ -65,7 +65,9 @@ $ php artisan serve
 ```
 
 # Features
-
+vite
+laravel
+mysql
 - Home
   - Login & register.
   - Search article.
