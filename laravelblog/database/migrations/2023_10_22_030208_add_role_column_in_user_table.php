@@ -11,8 +11,8 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-		Schema::table('categories', function (Blueprint $table) {
-			$table->string('icon')->after('name');
+		Schema::table('users', function (Blueprint $table) {
+			$table->enum('role', ['admin', 'writter', 'user'])->after('email');
 		});
 	}
 
@@ -21,8 +21,8 @@ return new class extends Migration
 	 */
 	public function down(): void
 	{
-		Schema::table('categories', function (Blueprint $table) {
-			$table->dropColumn('icon');
+		Schema::table('users', function (Blueprint $table) {
+			$table->dropColumn('role');
 		});
 	}
 };

@@ -11,8 +11,9 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-		Schema::table('categories', function (Blueprint $table) {
-			$table->string('icon')->after('name');
+		Schema::create('icons', function (Blueprint $table) {
+			$table->id();
+			$table->string('name');
 		});
 	}
 
@@ -21,8 +22,6 @@ return new class extends Migration
 	 */
 	public function down(): void
 	{
-		Schema::table('categories', function (Blueprint $table) {
-			$table->dropColumn('icon');
-		});
+		Schema::dropIfExists('icons');
 	}
 };

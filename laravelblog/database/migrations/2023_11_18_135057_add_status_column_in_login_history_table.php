@@ -11,8 +11,8 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-		Schema::table('categories', function (Blueprint $table) {
-			$table->string('icon')->after('name');
+		Schema::table('login_history', function (Blueprint $table) {
+			$table->boolean('status')->after('email')->default(false);
 		});
 	}
 
@@ -21,8 +21,8 @@ return new class extends Migration
 	 */
 	public function down(): void
 	{
-		Schema::table('categories', function (Blueprint $table) {
-			$table->dropColumn('icon');
+		Schema::table('login_history', function (Blueprint $table) {
+			$table->dropColumn('status');
 		});
 	}
 };
