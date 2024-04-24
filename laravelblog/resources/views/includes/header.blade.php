@@ -3,7 +3,7 @@
 
     <a href="{{ route('home') }}" class="logo d-flex align-items-center">
 
-      <h1 class="d-flex align-items-center">Sekolah JeWePe</h1>
+      <h1 class="d-flex align-items-center">Sekolah Edu</h1>
     </a>
 
     <i class="mobile-nav-toggle mobile-nav-show fa-solid fa-bars"></i>

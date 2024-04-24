@@ -10,3 +10,5 @@
 </p>
 <a href="{{ route('login') }}">Return to login page</a>
 @endsection
+
+

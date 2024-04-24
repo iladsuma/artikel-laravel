@@ -55,3 +55,4 @@
 
 	@include('includes.toast')
 </x-guest-layout>
+
