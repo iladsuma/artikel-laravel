@@ -40,7 +40,7 @@ $name = 'admin'; // username
 DB::table('users')->insert([
   'name' => $name,
   'slug' => Str::slug($name),
-  'email' => 'admin@jewepe.com', // email
+  'email' => 'admin@edu.com', // email
   'role' => 'admin', // role
   'password' => Hash::make("12345678") // password
 ]);
