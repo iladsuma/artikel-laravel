@@ -11,8 +11,8 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-		Schema::table('users', function (Blueprint $table) {
-			$table->enum('role', ['admin', 'writter', 'user'])->after('email');
+		Schema::table('posts', function (Blueprint $table) {
+			$table->foreignId('category_id')->after('user_id')->constrained('categories')->onDelete('cascade');
 		});
 	}
 
@@ -21,8 +21,8 @@ return new class extends Migration
 	 */
 	public function down(): void
 	{
-		Schema::table('users', function (Blueprint $table) {
-			$table->dropColumn('role');
+		Schema::table('posts', function (Blueprint $table) {
+			$table->dropColumn('category_id');
 		});
 	}
 };

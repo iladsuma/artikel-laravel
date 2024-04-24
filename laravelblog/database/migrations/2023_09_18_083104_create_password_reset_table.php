@@ -11,8 +11,10 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-		Schema::table('users', function (Blueprint $table) {
-			$table->enum('role', ['admin', 'writter', 'user'])->after('email');
+		Schema::create('password_reset', function (Blueprint $table) {
+			$table->string('email', 60)->index();
+			$table->string('token', 70);
+			$table->timestamp('created_at')->nullable();
 		});
 	}
 
@@ -21,8 +23,6 @@ return new class extends Migration
 	 */
 	public function down(): void
 	{
-		Schema::table('users', function (Blueprint $table) {
-			$table->dropColumn('role');
-		});
+		Schema::dropIfExists('password_reset');
 	}
 };
